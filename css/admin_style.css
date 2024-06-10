@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    height: 50px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.logout-form {
+    margin: 0;
+}
+
+main {
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.pedido {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.pedido p {
+    margin: 5px 0;
+}
+
+.form-estado, .form-comprobante {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.select-estado {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+}
+
+.btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-actualizar {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.btn-imprimir {
+    background-color: #008CBA;
+    color: white;
+}
+
+.btn-logout {
+    background-color: #f44336;
+    color: white;
+}
