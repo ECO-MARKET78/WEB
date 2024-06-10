@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda ECO_MARKET</title>
+    <style>
+        /* Estilos existentes */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #040506;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #9B1313;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header img {
+            max-width: 300px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 54px;
+        }
+
+        .search-container {
+            display: flex;
+            align-items: auto;
+        }
+
+        .search-container input[type="text"] {
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            margin-right: 10px;
+        }
+
+        .search-container button {
+            background-color: white;
+            color: #9B1313;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .cart-icon {
+            position: relative;
+            margin-left: 20px; /* Ajusta la distancia desde el borde izquierdo */
+            cursor: pointer;
+        }
+
+
+        .cart-icon {
+            position: relative;
+            margin-left: 20px; /* Ajusta la distancia desde el borde izquierdo */
+            cursor: pointer;
+         }
+
+        .cart-icon img {
+            width: 40px;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background-color: #fff;
+            color: #9B1313;
+            border-radius: 50%;
+            padding: 5px 10px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .login-icon {
+            margin-left: 100px; /* Ajusta la distancia desde el borde izquierdo */
+            cursor: pointer;
+			
+        }
+        .sidebar {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 140px;
+            left: 0;
+            width: 200px;
+            height: 100%;
+        }
+
+        .sidebar h2 {
+            font-size: 18px;
+            margin-top: 0;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin: 10px 0;
+        }
+		 .sidebar {
+            background-color: #fff;
+            padding: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 140px;
+            left: 0;
+            width: 200px;
+            height: 100%;
+        }
+
+        .sidebar h2 {
+            font-size: 18px;
+            margin-top: 0;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin: 10px 0;
+        }
+
+        .sidebar ul li button {
+            background-color: #75FF33;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 4px;
+            width: 100%;
+            text-align: left;
+        }
+
+        .sidebar ul li button:hover {
+            background-color: #800f0f;
+        }
+	
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #040506;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #75FF33;
+            color: white;
+            padding: 0.6px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header img {
+            max-width: 200px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 80px;
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-container input[type="text"] {
+            padding: 10px;
+            border: none;
+            border-radius: 1px;
+            margin-right: 30px;
+        }
+
+        .search-container button {
+            background-color: white;
+            color: #52312A;
+            border: none;
+            padding: 10px 40px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+        .search-container button:hover {
+            background-color: #f4f4f4;
+        }
+
+        .cart-icon {
+            position: relative;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .cart-icon img {
+            width: 30px;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background-color: #fff;
+            color: #9B1313;
+            border-radius: 50%;
+            padding: 5px 10px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .sidebar {
+            background-color: #fff;
+            padding: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 200px;
+            left: 0;
+            width: 200px;
+            height: 100%;
+        }
+
+        .sidebar h2 {
+            font-size: 18px;
+            margin-top: 0;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin: 10px 0;
+        }
+
+        .container {
+            margin-left: 220px;
+            padding: 20px;
+        }
+
+        .laptop-slider {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+        }
+
+        .laptop-item {
+            background-color: white;
+            padding: 110px;
+            min-width: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .laptop-item img {
+            max-width: 150px;
+            margin-bottom: 20px;
+        }
+
+        .laptop-item h2 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .laptop-item p {
+            margin: 5px 0;
+        }
+
+        .laptop-item .price {
+            color: #9B1313;
+            font-weight: bold;
+        }
+
+        .laptop-item button {
+            background-color: #9B1313;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+
+        .laptop-item button:hover {
+            background-color: #800f0f;
+        }
+
+        .cart-container {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            width: 80%;
+            max-width: 600px;
+            z-index: 1000;
+        }
+
+        .cart-container h2 {
+            margin-top: 0;
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .cart-item img {
+            max-width: 100px;
+            margin-right: 20px;
+        }
+
+        .cart-item h3 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .cart-item p {
+            margin: 5px 0;
+        }
+
+        .cart-item .price {
+            color: #9B1313;
+            font-weight: bold;
+        }
+
+        .cart-item .quantity-control {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .cart-item .quantity-control button {
+            background-color: #9B1313;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 4px;
+            margin: 0 5px;
+        }
+
+        .cart-item .quantity-control button:hover {
+            background-color: #800f0f;
+        }
+
+        .cart-item .quantity {
+            font-size: 18px;
+        }
+
+        .cart-item .remove-button {
+            background-color: #ff4c4c;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-left: 20px;
+        }
+
+        .cart-item .remove-button:hover {
+            background-color: #e43e3e;
+        }
+
+        .cart-footer {
+            text-align: right;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        .cart-footer .subtotal {
+            font-weight: bold;
+        }
+
+        .cart-footer button {
+            background-color: #9B1313;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+
+        .cart-footer button:hover {
+            background-color: #800f0f;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+    <img src="Logo.png" alt="Logo de IMPORTADORA JARMA">
+    <h1>ECO_MARKET</h1>
+    <div class="search-container">
+        <input type="text" id="search-input" placeholder="Buscar laptops...">
+        <button type="button" onclick="searchLaptops()">Buscar</button>
+        <div class="cart-icon" onclick="toggleCart()">
+            <img src="logocarrito.jpg" alt="Carrito">
+            <span class="cart-count" id="cart-count">0</span>
+        </div>
+        <div class="login-icon" onclick="window.location.href='login.html'">
+            <img src="usuario.png" alt="Iniciar Sesión" style="width: 30px; margin-left: 10px;">
+        </div>
+    </div>
+</header>
+
+
+   <div class="sidebar">
+        <h2>VARIEDADES</h2>
+        <ul>
+            <li><button type="button"><a href="LACTEOS.html" style="color: white; text-decoration: none;">LÁCTEOS</a></button></li>
+			<li><button type="button"><a href="BEBIDAS.html" style="color: white; text-decoration: none;">BEBIDAS</a></button></li>
+			<li><button type="button"><a href="ALIMENTOSDEPRIMERANECESIDAD.html" style="color: white; text-decoration: none;">ALIMENTOS DE PRIMERA NECESIDAD</a></button></li>
+			<li><button type="button"><a href="ASEO.html" style="color: white; text-decoration: none;">ASEO</a></button></li>
+           </ul>
+        </div>
+
+    <div class="container">
+        <div class="laptop-slider" id="laptop-slider">
+            <div class="laptop-item">
+                <img src="LACTEOS/GAMING1.png" alt="Laptop 2">
+                <h2>VITA CREMA </h2>
+                <p>VITA CREMA 200ML</p>
+                <p class="price">$2.00</p>
+                <button type="button" onclick="addToCart('VITA CREMA ', 'VITA CREMA 200ML.',2.00, 'LACTEOS/GAMING1.png')">Agregar al Carrito</button>
+            </div>
+			<div class="laptop-item">
+                  <img src="LACTEOS/leche.jpg" alt="Laptop 2">
+                <h2>LECHE TRU DESCREMADA </h2>
+                <p>LECHE TRU DESCREMADA 1LITRO</p>
+                <p class="price">$1.00</p>
+                <button type="button" onclick="addToCart('LECHE TRU DESCREMADA', 'LECHE TRU DESCREMADA 1LITRO.',1.00, 'LACTEOS/leche.jpg')">Agregar al Carrito</button>
+            </div>
+			<div class="laptop-item">
+                  <img src="ALIMENTOSDEPRIMERANECESIDAD/aceite.jpg" alt="Laptop 2">
+                <h2>ACEITE ALESOL 1LITRO </h2>
+                <p>ACEITE ALESOL 1LITRO</p>
+                <p class="price">$1.50</p>
+                <button type="button" onclick="addToCart('ACEITE ALESOL 1LITRO ', 'ACEITE ALESOL 1LITRO.',1.50, 'ALIMENTOSDEPRIMERANECESIDAD/aceite.jpg')">Agregar al Carrito</button>
+            </div>
+            <div class="laptop-item">
+                  <img src="ALIMENTOSDEPRIMERANECESIDAD/Frijoles1.jpg" alt="Laptop 2">
+                <h2>FRIJOLES BAYO </h2>
+                <p>FRIJOLES BAYO 500G</p>
+                <p class="price">$1.80</p>
+                <button type="button" onclick="addToCart('FRIJOLES BAYO ', 'FRIJOLES BAYO 500G.',1.80, 'ALIMENTOSDEPRIMERANECESIDAD/Frijoles1.jpg')">Agregar al Carrito</button>
+            </div>
+            <div class="laptop-item">
+                  <img src="ALIMENTOSDEPRIMERANECESIDAD/harina_trigo.jpg" alt="Laptop 2">
+                <h2>HARINA DE TRIGO LISTA </h2>
+                <p>HARINA DE TRIGO LISTA 1KG</p>
+                <p class="price">$3.00</p>
+                <button type="button" onclick="addToCart('HARINA DE TRIGO LISTA ', 'HARINA DE TRIGO LISTA 1KG.',3.00, 'ALIMENTOSDEPRIMERANECESIDAD/harina_trigo.jpg')">Agregar al Carrito</button>
+            </div>
+			<div class="laptop-item">
+                <img src="ALIMENTOSDEPRIMERANECESIDAD/cafe_instantaneo.jpg" alt="Laptop 2">
+                <h2>NESCAFE CLASICO </h2>
+                <p>NESCAFE CLASICO 500G</p>
+                <p class="price">$5.00</p>
+                <button type="button" onclick="addToCart('VITA CREMA ', 'NESCAFE CLASICO 500G.',5.00, 'ALIMENTOSDEPRIMERANECESIDAD/cafe_instantaneo.jpg')">Agregar al Carrito</button>
+            </div>
+			<div class="laptop-item">
+                  <img src="LACTEOS/GAMING1.png" alt="Laptop 2">
+                <h2>VITA CREMA </h2>
+                <p>VITA CREMA 200ML</p>
+                <p class="price">$2.00</p>
+                <button type="button" onclick="addToCart('VITA CREMA ', 'VITA CREMA 200ML.',2.00, 'LACTEOS/GAMING1.png')">Agregar al Carrito</button>
+            </div>
+			<div class="laptop-item">
+                  <img src="LACTEOS/GAMING1.png" alt="Laptop 2">
+                <h2>VITA CREMA </h2>
+                <p>VITA CREMA 200ML</p>
+                <p class="price">$2.00</p>
+                <button type="button" onclick="addToCart('VITA CREMA ', 'VITA CREMA 200ML.',2.00, 'LACTEOS/GAMING1.png')">Agregar al Carrito</button>
+            </div>
+            <div class="laptop-item">
+                  <img src="LACTEOS/GAMING1.png" alt="Laptop 2">
+                <h2>VITA CREMA </h2>
+                <p>VITA CREMA 200ML</p>
+                <p class="price">$2.00</p>
+                <button type="button" onclick="addToCart('VITA CREMA ', 'VITA CREMA 200ML.',2.00, 'LACTEOS/GAMING1.png')">Agregar al Carrito</button>
+            </div>
+            <div class="laptop-item">
+                  <img src="LACTEOS/GAMING1.png" alt="Laptop 2">
+                <h2>VITA CREMA </h2>
+                <p>VITA CREMA 200ML</p>
+                <p class="price">$2.00</p>
+                <button type="button" onclick="addToCart('VITA CREMA ', 'VITA CREMA 200ML.',2.00, 'LACTEOS/GAMING1.png')">Agregar al Carrito</button>
+            </div>
+        </div>
+    </div>
+   <div class="cart-container" id="cart-container">
+        <h2>Carrito de Compras</h2>
+        <div id="cart-items"></div>
+        <div class="cart-footer">
+            <p class="subtotal">Subtotal: $<span id="cart-subtotal">0.00</span></p>
+            <button type="button" onclick="proceedToCheckout()">Proceder al Pago</button>
+        </div>
+    </div>
+
+    <script>
+        let laptops = [
+            {
+                title: 'ACER ASPIRE',
+                description: 'ACER ASPIRE 5 14 Intel Core I5-1335U 8gb RAM 512gb SSD 14″ WUXGA W11.',
+                price: 565.00,
+                image: 'ACER/ACER1.png'
+            },
+            // Agrega más laptops aquí
+        ];
+
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        updateCartCount();
+
+        function addToCart(title, description, price, image) {
+            const item = { title, description, price, image, quantity: 1 };
+            const existingItemIndex = cart.findIndex(i => i.title === item.title);
+            if (existingItemIndex !== -1) {
+                cart[existingItemIndex].quantity += 1;
+            } else {
+                cart.push(item);
+            }
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+        }
+
+        function updateCartCount() {
+            const cartCount = document.getElementById('cart-count');
+            cartCount.textContent = cart.reduce((total, item) => total + item.quantity, 0);
+        }
+
+        function toggleCart() {
+            const cartContainer = document.getElementById('cart-container');
+            cartContainer.style.display = cartContainer.style.display === 'block' ? 'none' : 'block';
+            displayCartItems();
+        }
+
+        function displayCartItems() {
+            const cartItemsContainer = document.getElementById('cart-items');
+            cartItemsContainer.innerHTML = '';
+            let subtotal = 0;
+
+            cart.forEach(item => {
+                subtotal += item.price * item.quantity;
+                const cartItem = document.createElement('div');
+                cartItem.className = 'cart-item';
+
+                cartItem.innerHTML = `
+                    <img src="${item.image}" alt="${item.title}">
+                    <div>
+                        <h3>${item.title}</h3>
+                        <p>${item.description}</p>
+                        <p class="price">$${item.price.toFixed(2)}</p>
+                        <div class="quantity-control">
+                            <button onclick="updateQuantity('${item.title}', -1)">-</button>
+                            <span class="quantity">${item.quantity}</span>
+                            <button onclick="updateQuantity('${item.title}', 1)">+</button>
+                        </div>
+                        <button class="remove-button" onclick="removeFromCart('${item.title}')">Eliminar</button>
+                    </div>
+                `;
+
+                cartItemsContainer.appendChild(cartItem);
+            });
+
+            const cartSubtotal = document.getElementById('cart-subtotal');
+            cartSubtotal.textContent = subtotal.toFixed(2);
+        }
+
+        function updateQuantity(title, change) {
+            const itemIndex = cart.findIndex(i => i.title === title);
+            if (itemIndex !== -1) {
+                cart[itemIndex].quantity += change;
+                if (cart[itemIndex].quantity <= 0) {
+                    cart.splice(itemIndex, 1);
+                }
+                localStorage.setItem('cart', JSON.stringify(cart));
+                updateCartCount();
+                displayCartItems();
+            }
+        }
+
+        function removeFromCart(title) {
+            cart = cart.filter(item => item.title !== title);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+            displayCartItems();
+        }
+
+        function proceedToCheckout() {
+            window.location.href = 'checkout.html';
+        }
+
+        function searchLaptops() {
+            const searchTerm = document.getElementById('search-input').value.toLowerCase();
+            const filteredLaptops = laptops.filter(laptop => laptop.title.toLowerCase().includes(searchTerm));
+
+            const laptopSlider = document.getElementById('laptop-slider');
+            laptopSlider.innerHTML = '';
+
+            filteredLaptops.forEach(laptop => {
+                const laptopItem = document.createElement('div');
+                laptopItem.className = 'laptop-item';
+
+                laptopItem.innerHTML = `
+                    <img src="${laptop.image}" alt="${laptop.title}">
+                    <h2>${laptop.title}</h2>
+                    <p>${laptop.description}</p>
+                    <p class="price">$${laptop.price.toFixed(2)}</p>
+                    <button type="button" onclick="addToCart('${laptop.title}', '${laptop.description}', ${laptop.price}, '${laptop.image}')">Agregar al Carrito</button>
+                `;
+
+                laptopSlider.appendChild(laptopItem);
+            });
+        }
+    </script>
+</body>
+</html>
